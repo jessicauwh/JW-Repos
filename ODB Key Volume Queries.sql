@@ -17,9 +17,10 @@ declare @FiscalPeriodEnd varchar(2) = '09'	--FP must be two digits 06 = December
 --then run
 
 select top 1000 * from Mart_UWHealth.UWHC_REVENUE_USAGE rev
-where rev.GL_COMPANY_ID = '211'
-AND CONCAT(rev.GL_BUILDING_ID,rev.GL_COST_CENTER_ID) = '10803035587'
-
+where --rev.GL_COMPANY_ID = '211'
+--AND CONCAT(rev.GL_BUILDING_ID,rev.GL_COST_CENTER_ID) = '10803035587'
+--AND 
+	rev.GL_COST_CENTER_ID = '3033113'
 
 --This part of the query finds volumes for UWHC
 With HB_Volume_Query as (
